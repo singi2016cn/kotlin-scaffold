@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: kotlin-scaffold
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:mysql:///myapi
+    username: root
+    password: 123456
+server:
+  port: 8080
+mybatis-plus:
+  configuration:
+    # MyBatis 配置
+    map-underscore-to-camel-case: true
+    # 自动映射策略: full:对所有的 resultMap 都进行自动映射
+    auto-mapping-behavior: full
+  # 指定 MyBatis 别名包扫描路径，用于给包中的类注册别名
+  type-aliases-package: top.singi.kotlin_scaffold.entity
+  global-config:
+    # 全局配置
+    db-config:
+      # 数据库配置
+      id-type: auto
+# 自定义配置参数
+app:
+  jwt-secret: daf66e01593f61a15b857cf433aae03a005812b31234e149036bcc8dee755dbb
+  jwt-expiration-milliseconds: 604800000
